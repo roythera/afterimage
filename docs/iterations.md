@@ -346,10 +346,12 @@ free (73–79 across all four qualities), blur/downscale/noise are where both
 models fail.
 
 **The dominant effect is not robustness, though.** Clean AUC falls from 99.48 to
-77.17 with no transform applied at all. That 22-point gap is generator and
-resolution transfer, and it is larger than every transform effect in this table
-combined. Reporting the robustness improvement without that caveat would be
-misleading, so `docs/robustness.md` states it before the table.
+77.17 with no transform applied at all. That 22.31-point gap is generator and
+resolution transfer, and it is the same order of magnitude as the worst single
+transform effect measured anywhere in this project (25.65 points of AUC, resize
+0.25x on CIFAKE) — but it is paid up front, before any transform. Reporting the
+robustness improvement without that caveat would be misleading, so
+`docs/robustness.md` states it before the table.
 
 **Unexpected result — below-chance AUC.** The baseline scores 44.20 at noise
 sigma=0.10 and 46.22 at noise sigma=0.05: worse than a coin flip, meaning the

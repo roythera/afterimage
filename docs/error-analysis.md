@@ -153,10 +153,11 @@ at ~1024px, from generators and a source dataset that appear nowhere in training
 | Robust | 99.21 | 74.40 | −24.81 |
 
 No transform is applied in either column. The whole gap is generator and
-resolution transfer, and it is larger than any transform effect measured in this
-project: the worst single transform costs the baseline 25.65 points of AUC on
-CIFAKE (99.48 → 73.83 at resize 0.25x), and transfer costs 22.31 before the
-transform suite is applied at all.
+resolution transfer, and it is the same order of magnitude as the worst
+post-processing effect measured anywhere in this project: the worst single
+transform costs the baseline 25.65 points of AUC on CIFAKE (99.48 → 73.83 at
+resize 0.25x), and transfer costs 22.31 before the transform suite is applied at
+all. The two are comparable in size, and they compound.
 
 The two failures are also **different in kind**. Post-processing failure is
 substantially miscalibration and is recoverable by re-thresholding (up to +16.10

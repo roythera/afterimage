@@ -166,11 +166,13 @@ inference:
 | Robust | 74.40 | **67.54** | **55.63** |
 
 The ordering holds — same trade, same direction, smaller magnitude. But clean AUC
-falls from 99.48 to 77.17 *with no transform applied at all*, and that 22-point
-generator/resolution transfer gap is larger than every transform effect in the
-table combined. Robustness to post-processing is not the same problem as
-generalisation to unseen generators, and on this evidence the second one is
-harder. Saying so is more useful than reporting the improvement alone.
+falls from 99.48 to 77.17 *with no transform applied at all*. That 22.31-point
+generator/resolution transfer gap is the same order of magnitude as the worst
+single transform in the entire CIFAKE table (25.65 points of AUC at resize
+0.25x), and it is paid before the transform suite is applied. Robustness to
+post-processing and generalisation to unseen generators are separate problems of
+comparable size, and this project only solves the first. Saying so is more useful
+than reporting the improvement alone.
 
 Two things only visible at full resolution:
 
