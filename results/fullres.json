@@ -1,0 +1,457 @@
+{
+  "n": 600,
+  "results": {
+    "baseline|patch": {
+      "conditions": {
+        "clean": {
+          "family": "clean",
+          "param": "-",
+          "acc": 0.5766666666666667,
+          "auc": 0.7717444444444446,
+          "mean_score": 0.16136919738454994
+        },
+        "jpeg_q=90": {
+          "family": "jpeg",
+          "param": "q=90",
+          "acc": 0.58,
+          "auc": 0.7714777777777777,
+          "mean_score": 0.15974705637000783
+        },
+        "jpeg_q=70": {
+          "family": "jpeg",
+          "param": "q=70",
+          "acc": 0.565,
+          "auc": 0.7851888888888889,
+          "mean_score": 0.1425527113889805
+        },
+        "jpeg_q=50": {
+          "family": "jpeg",
+          "param": "q=50",
+          "acc": 0.53,
+          "auc": 0.7858222222222221,
+          "mean_score": 0.08428450248640268
+        },
+        "jpeg_q=30": {
+          "family": "jpeg",
+          "param": "q=30",
+          "acc": 0.5233333333333333,
+          "auc": 0.7308111111111112,
+          "mean_score": 0.09471606756434783
+        },
+        "blur_sigma=0.5": {
+          "family": "blur",
+          "param": "sigma=0.5",
+          "acc": 0.5533333333333333,
+          "auc": 0.7392555555555556,
+          "mean_score": 0.14753437106432551
+        },
+        "blur_sigma=1.0": {
+          "family": "blur",
+          "param": "sigma=1.0",
+          "acc": 0.57,
+          "auc": 0.6195666666666667,
+          "mean_score": 0.26833762808915707
+        },
+        "blur_sigma=2.0": {
+          "family": "blur",
+          "param": "sigma=2.0",
+          "acc": 0.455,
+          "auc": 0.47311111111111115,
+          "mean_score": 0.5249533699738838
+        },
+        "resize_0.5x": {
+          "family": "resize",
+          "param": "0.5x",
+          "acc": 0.5766666666666667,
+          "auc": 0.6253777777777778,
+          "mean_score": 0.25096796439762425
+        },
+        "resize_0.25x": {
+          "family": "resize",
+          "param": "0.25x",
+          "acc": 0.47833333333333333,
+          "auc": 0.48631111111111114,
+          "mean_score": 0.47087580022693826
+        },
+        "noise_sigma=0.02": {
+          "family": "noise",
+          "param": "sigma=0.02",
+          "acc": 0.5033333333333333,
+          "auc": 0.6289333333333333,
+          "mean_score": 0.05125741237433534
+        },
+        "noise_sigma=0.05": {
+          "family": "noise",
+          "param": "sigma=0.05",
+          "acc": 0.485,
+          "auc": 0.46221111111111113,
+          "mean_score": 0.05018271334805321
+        },
+        "noise_sigma=0.10": {
+          "family": "noise",
+          "param": "sigma=0.10",
+          "acc": 0.45166666666666666,
+          "auc": 0.4420111111111111,
+          "mean_score": 0.23308246596041612
+        },
+        "jitter_+/-20%": {
+          "family": "jitter",
+          "param": "+/-20%",
+          "acc": 0.6,
+          "auc": 0.7384,
+          "mean_score": 0.1965160731379784
+        },
+        "crop_80%": {
+          "family": "crop",
+          "param": "80%",
+          "acc": 0.555,
+          "auc": 0.700188888888889,
+          "mean_score": 0.1475011285292017
+        }
+      },
+      "clean_auc": 0.7717444444444446,
+      "clean_acc": 0.5766666666666667,
+      "mean_transformed_auc": 0.6420476190476191,
+      "worst_transformed_auc": 0.4420111111111111
+    },
+    "baseline|resize": {
+      "conditions": {
+        "clean": {
+          "family": "clean",
+          "param": "-",
+          "acc": 0.605,
+          "auc": 0.650561111111111,
+          "mean_score": 0.42662425085539063
+        },
+        "jpeg_q=90": {
+          "family": "jpeg",
+          "param": "q=90",
+          "acc": 0.605,
+          "auc": 0.6513888888888889,
+          "mean_score": 0.42610358105162
+        },
+        "jpeg_q=70": {
+          "family": "jpeg",
+          "param": "q=70",
+          "acc": 0.6066666666666667,
+          "auc": 0.6528222222222222,
+          "mean_score": 0.4284053795555841
+        },
+        "jpeg_q=50": {
+          "family": "jpeg",
+          "param": "q=50",
+          "acc": 0.6016666666666667,
+          "auc": 0.6488722222222223,
+          "mean_score": 0.42247430990222806
+        },
+        "jpeg_q=30": {
+          "family": "jpeg",
+          "param": "q=30",
+          "acc": 0.6133333333333333,
+          "auc": 0.6529166666666667,
+          "mean_score": 0.4278126040898413
+        },
+        "blur_sigma=0.5": {
+          "family": "blur",
+          "param": "sigma=0.5",
+          "acc": 0.6016666666666667,
+          "auc": 0.6509166666666666,
+          "mean_score": 0.4253023734002038
+        },
+        "blur_sigma=1.0": {
+          "family": "blur",
+          "param": "sigma=1.0",
+          "acc": 0.605,
+          "auc": 0.6522222222222223,
+          "mean_score": 0.42059036495755286
+        },
+        "blur_sigma=2.0": {
+          "family": "blur",
+          "param": "sigma=2.0",
+          "acc": 0.61,
+          "auc": 0.6571277777777778,
+          "mean_score": 0.4005879040268859
+        },
+        "resize_0.5x": {
+          "family": "resize",
+          "param": "0.5x",
+          "acc": 0.6016666666666667,
+          "auc": 0.6519444444444444,
+          "mean_score": 0.42198240829126604
+        },
+        "resize_0.25x": {
+          "family": "resize",
+          "param": "0.25x",
+          "acc": 0.61,
+          "auc": 0.6554944444444445,
+          "mean_score": 0.40789151620580877
+        },
+        "noise_sigma=0.02": {
+          "family": "noise",
+          "param": "sigma=0.02",
+          "acc": 0.6033333333333334,
+          "auc": 0.6495166666666667,
+          "mean_score": 0.4256737484863327
+        },
+        "noise_sigma=0.05": {
+          "family": "noise",
+          "param": "sigma=0.05",
+          "acc": 0.6033333333333334,
+          "auc": 0.6495944444444445,
+          "mean_score": 0.4207166081521484
+        },
+        "noise_sigma=0.10": {
+          "family": "noise",
+          "param": "sigma=0.10",
+          "acc": 0.605,
+          "auc": 0.6553833333333334,
+          "mean_score": 0.41051647925110646
+        },
+        "jitter_+/-20%": {
+          "family": "jitter",
+          "param": "+/-20%",
+          "acc": 0.595,
+          "auc": 0.6428111111111111,
+          "mean_score": 0.4297929310099593
+        },
+        "crop_80%": {
+          "family": "crop",
+          "param": "80%",
+          "acc": 0.5566666666666666,
+          "auc": 0.5946777777777779,
+          "mean_score": 0.3490329541543362
+        }
+      },
+      "clean_auc": 0.650561111111111,
+      "clean_acc": 0.605,
+      "mean_transformed_auc": 0.6475492063492064,
+      "worst_transformed_auc": 0.5946777777777779
+    },
+    "robust|patch": {
+      "conditions": {
+        "clean": {
+          "family": "clean",
+          "param": "-",
+          "acc": 0.5533333333333333,
+          "auc": 0.7439777777777778,
+          "mean_score": 0.1368157478718831
+        },
+        "jpeg_q=90": {
+          "family": "jpeg",
+          "param": "q=90",
+          "acc": 0.555,
+          "auc": 0.7451222222222222,
+          "mean_score": 0.13802835336627095
+        },
+        "jpeg_q=70": {
+          "family": "jpeg",
+          "param": "q=70",
+          "acc": 0.54,
+          "auc": 0.7562444444444444,
+          "mean_score": 0.11788132138602343
+        },
+        "jpeg_q=50": {
+          "family": "jpeg",
+          "param": "q=50",
+          "acc": 0.515,
+          "auc": 0.7485444444444445,
+          "mean_score": 0.0794661545750878
+        },
+        "jpeg_q=30": {
+          "family": "jpeg",
+          "param": "q=30",
+          "acc": 0.53,
+          "auc": 0.6819222222222223,
+          "mean_score": 0.11013887436710879
+        },
+        "blur_sigma=0.5": {
+          "family": "blur",
+          "param": "sigma=0.5",
+          "acc": 0.5483333333333333,
+          "auc": 0.7247777777777779,
+          "mean_score": 0.11929386704072575
+        },
+        "blur_sigma=1.0": {
+          "family": "blur",
+          "param": "sigma=1.0",
+          "acc": 0.5516666666666666,
+          "auc": 0.6798222222222222,
+          "mean_score": 0.14656493423463426
+        },
+        "blur_sigma=2.0": {
+          "family": "blur",
+          "param": "sigma=2.0",
+          "acc": 0.5716666666666667,
+          "auc": 0.5973444444444445,
+          "mean_score": 0.275652834023486
+        },
+        "resize_0.5x": {
+          "family": "resize",
+          "param": "0.5x",
+          "acc": 0.55,
+          "auc": 0.6785111111111111,
+          "mean_score": 0.14440192756227907
+        },
+        "resize_0.25x": {
+          "family": "resize",
+          "param": "0.25x",
+          "acc": 0.5733333333333334,
+          "auc": 0.590988888888889,
+          "mean_score": 0.2519812936963236
+        },
+        "noise_sigma=0.02": {
+          "family": "noise",
+          "param": "sigma=0.02",
+          "acc": 0.5116666666666667,
+          "auc": 0.6691666666666668,
+          "mean_score": 0.09017239721309696
+        },
+        "noise_sigma=0.05": {
+          "family": "noise",
+          "param": "sigma=0.05",
+          "acc": 0.49333333333333335,
+          "auc": 0.5969111111111112,
+          "mean_score": 0.06504122111838456
+        },
+        "noise_sigma=0.10": {
+          "family": "noise",
+          "param": "sigma=0.10",
+          "acc": 0.49333333333333335,
+          "auc": 0.5563333333333333,
+          "mean_score": 0.04619261444589635
+        },
+        "jitter_+/-20%": {
+          "family": "jitter",
+          "param": "+/-20%",
+          "acc": 0.5766666666666667,
+          "auc": 0.704011111111111,
+          "mean_score": 0.1629923380680805
+        },
+        "crop_80%": {
+          "family": "crop",
+          "param": "80%",
+          "acc": 0.5583333333333333,
+          "auc": 0.7256,
+          "mean_score": 0.12839623682915657
+        }
+      },
+      "clean_auc": 0.7439777777777778,
+      "clean_acc": 0.5533333333333333,
+      "mean_transformed_auc": 0.6753785714285714,
+      "worst_transformed_auc": 0.5563333333333333
+    },
+    "robust|resize": {
+      "conditions": {
+        "clean": {
+          "family": "clean",
+          "param": "-",
+          "acc": 0.5933333333333334,
+          "auc": 0.6309611111111111,
+          "mean_score": 0.3189761898525546
+        },
+        "jpeg_q=90": {
+          "family": "jpeg",
+          "param": "q=90",
+          "acc": 0.5966666666666667,
+          "auc": 0.6306222222222222,
+          "mean_score": 0.31844992309158915
+        },
+        "jpeg_q=70": {
+          "family": "jpeg",
+          "param": "q=70",
+          "acc": 0.5966666666666667,
+          "auc": 0.6330944444444444,
+          "mean_score": 0.3205727354274703
+        },
+        "jpeg_q=50": {
+          "family": "jpeg",
+          "param": "q=50",
+          "acc": 0.5933333333333334,
+          "auc": 0.6292444444444445,
+          "mean_score": 0.31546012326181355
+        },
+        "jpeg_q=30": {
+          "family": "jpeg",
+          "param": "q=30",
+          "acc": 0.5933333333333334,
+          "auc": 0.63555,
+          "mean_score": 0.32010439472838
+        },
+        "blur_sigma=0.5": {
+          "family": "blur",
+          "param": "sigma=0.5",
+          "acc": 0.5933333333333334,
+          "auc": 0.6311833333333333,
+          "mean_score": 0.3186728763946068
+        },
+        "blur_sigma=1.0": {
+          "family": "blur",
+          "param": "sigma=1.0",
+          "acc": 0.5933333333333334,
+          "auc": 0.6315000000000001,
+          "mean_score": 0.3173714656497845
+        },
+        "blur_sigma=2.0": {
+          "family": "blur",
+          "param": "sigma=2.0",
+          "acc": 0.5916666666666667,
+          "auc": 0.6333833333333333,
+          "mean_score": 0.3125286626390147
+        },
+        "resize_0.5x": {
+          "family": "resize",
+          "param": "0.5x",
+          "acc": 0.5916666666666667,
+          "auc": 0.6313277777777779,
+          "mean_score": 0.3173638315286013
+        },
+        "resize_0.25x": {
+          "family": "resize",
+          "param": "0.25x",
+          "acc": 0.5933333333333334,
+          "auc": 0.6330333333333333,
+          "mean_score": 0.3140239083242704
+        },
+        "noise_sigma=0.02": {
+          "family": "noise",
+          "param": "sigma=0.02",
+          "acc": 0.5916666666666667,
+          "auc": 0.6296833333333335,
+          "mean_score": 0.317504548520524
+        },
+        "noise_sigma=0.05": {
+          "family": "noise",
+          "param": "sigma=0.05",
+          "acc": 0.5933333333333334,
+          "auc": 0.62835,
+          "mean_score": 0.3124565660101806
+        },
+        "noise_sigma=0.10": {
+          "family": "noise",
+          "param": "sigma=0.10",
+          "acc": 0.5883333333333334,
+          "auc": 0.6328333333333334,
+          "mean_score": 0.3011099845063067
+        },
+        "jitter_+/-20%": {
+          "family": "jitter",
+          "param": "+/-20%",
+          "acc": 0.59,
+          "auc": 0.6234833333333334,
+          "mean_score": 0.3198517973487295
+        },
+        "crop_80%": {
+          "family": "crop",
+          "param": "80%",
+          "acc": 0.58,
+          "auc": 0.6181888888888889,
+          "mean_score": 0.31458365045312064
+        }
+      },
+      "clean_auc": 0.6309611111111111,
+      "clean_acc": 0.5933333333333334,
+      "mean_transformed_auc": 0.6301055555555557,
+      "worst_transformed_auc": 0.6181888888888889
+    }
+  }
+}

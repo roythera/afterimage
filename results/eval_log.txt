@@ -1,0 +1,63 @@
+test set: 20,000 images, 50.0% AI-generated, device=mps
+
+=== baseline (epoch 10, clean val_acc 0.9678, 1,562,353 params) ===
+  clean                acc 0.9669  auc 0.9948  tpr 0.9663  tnr 0.9675
+  jpeg_q=90            acc 0.9647  auc 0.9942  tpr 0.9653  tnr 0.9640
+  jpeg_q=70            acc 0.9646  auc 0.9941  tpr 0.9737  tnr 0.9555
+  jpeg_q=50            acc 0.9401  auc 0.9850  tpr 0.9398  tnr 0.9403
+  jpeg_q=30            acc 0.8791  auc 0.9780  tpr 0.7746  tnr 0.9837
+  blur_sigma=0.5       acc 0.8053  auc 0.9806  tpr 0.6131  tnr 0.9975
+  blur_sigma=1.0       acc 0.6211  auc 0.7812  tpr 0.2653  tnr 0.9770
+  blur_sigma=2.0       acc 0.6132  auc 0.7473  tpr 0.9021  tnr 0.3244
+  resize_0.5x          acc 0.6261  auc 0.7778  tpr 0.2791  tnr 0.9731
+  resize_0.25x         acc 0.6306  auc 0.7383  tpr 0.8628  tnr 0.3983
+  noise_sigma=0.02     acc 0.9598  auc 0.9933  tpr 0.9501  tnr 0.9695
+  noise_sigma=0.05     acc 0.9130  auc 0.9738  tpr 0.9079  tnr 0.9181
+  noise_sigma=0.10     acc 0.7557  auc 0.8747  tpr 0.9258  tnr 0.5855
+  jitter_+/-20%        acc 0.9552  auc 0.9908  tpr 0.9529  tnr 0.9575
+  crop_80%             acc 0.7174  auc 0.9491  tpr 0.4377  tnr 0.9971
+  -> clean 0.9669 | mean transformed 0.8104 | worst 0.6132 | mean drop 15.6 pts
+
+=== robust (epoch 9, clean val_acc 0.9606, 1,562,353 params) ===
+  clean                acc 0.9558  auc 0.9921  tpr 0.9646  tnr 0.9470
+  jpeg_q=90            acc 0.9562  auc 0.9917  tpr 0.9612  tnr 0.9511
+  jpeg_q=70            acc 0.9573  auc 0.9922  tpr 0.9650  tnr 0.9495
+  jpeg_q=50            acc 0.9438  auc 0.9877  tpr 0.9333  tnr 0.9544
+  jpeg_q=30            acc 0.9268  auc 0.9811  tpr 0.9016  tnr 0.9521
+  blur_sigma=0.5       acc 0.9465  auc 0.9890  tpr 0.9315  tnr 0.9615
+  blur_sigma=1.0       acc 0.9259  auc 0.9797  tpr 0.9358  tnr 0.9160
+  blur_sigma=2.0       acc 0.8939  auc 0.9611  tpr 0.9021  tnr 0.8857
+  resize_0.5x          acc 0.9208  auc 0.9779  tpr 0.9364  tnr 0.9052
+  resize_0.25x         acc 0.8794  auc 0.9516  tpr 0.9006  tnr 0.8583
+  noise_sigma=0.02     acc 0.9540  auc 0.9913  tpr 0.9564  tnr 0.9517
+  noise_sigma=0.05     acc 0.9441  auc 0.9879  tpr 0.9417  tnr 0.9465
+  noise_sigma=0.10     acc 0.9142  auc 0.9742  tpr 0.9166  tnr 0.9117
+  jitter_+/-20%        acc 0.9445  auc 0.9874  tpr 0.9492  tnr 0.9398
+  crop_80%             acc 0.9205  auc 0.9777  tpr 0.9076  tnr 0.9335
+  -> clean 0.9558 | mean transformed 0.9306 | worst 0.8794 | mean drop 2.5 pts
+
+wrote results/scores.npz
+
+Metric: accuracy at threshold 0.5, and AUC. Test set: 20,000 held-out CIFAKE test images, never seen in training.
+
+| Condition | Parameter | baseline acc | baseline AUC | robust acc | robust AUC | Delta acc |
+|---|---|---|---|---|---|---|
+| clean | - | 96.69 | 99.48 | 95.58 | 99.21 | -1.11 |
+| jpeg | q=90 | 96.47 | 99.42 | 95.62 | 99.17 | -0.85 |
+| jpeg | q=70 | 96.46 | 99.41 | 95.73 | 99.22 | -0.73 |
+| jpeg | q=50 | 94.01 | 98.50 | 94.38 | 98.77 | +0.38 |
+| jpeg | q=30 | 87.91 | 97.80 | 92.69 | 98.11 | +4.77 |
+| blur | sigma=0.5 | 80.53 | 98.06 | 94.65 | 98.90 | +14.12 |
+| blur | sigma=1.0 | 62.11 | 78.12 | 92.59 | 97.97 | +30.47 |
+| blur | sigma=2.0 | 61.32 | 74.73 | 89.39 | 96.11 | +28.07 |
+| resize | 0.5x | 62.61 | 77.78 | 92.08 | 97.79 | +29.47 |
+| resize | 0.25x | 63.06 | 73.83 | 87.94 | 95.16 | +24.89 |
+| noise | sigma=0.02 | 95.98 | 99.33 | 95.41 | 99.13 | -0.58 |
+| noise | sigma=0.05 | 91.30 | 97.38 | 94.41 | 98.79 | +3.11 |
+| noise | sigma=0.10 | 75.56 | 87.47 | 91.42 | 97.42 | +15.85 |
+| jitter | +/-20% | 95.52 | 99.08 | 94.45 | 98.74 | -1.07 |
+| crop | 80% | 71.74 | 94.91 | 92.05 | 97.77 | +20.31 |
+
+- **baseline**: clean 96.69%, mean over transformed conditions 81.04%, worst 61.32%, mean drop 15.65 pts.
+- **robust**: clean 95.58%, mean over transformed conditions 93.06%, worst 87.94%, mean drop 2.52 pts.
+wrote results/robustness.json and results/robustness_table.md

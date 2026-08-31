@@ -1,0 +1,21 @@
+Kaggle setup for Track 5
+------------------------
+
+1. Notebook -> right panel -> Accelerator = GPU T4 x2, Internet = On
+
+2. Attach the dataset (no download needed):
+   Right panel -> Input -> Add Input -> search "cifake"
+   -> birdy654/cifake-real-and-ai-generated-synthetic-images -> Add
+   It mounts at /kaggle/input/cifake-real-and-ai-generated-synthetic-images/
+
+3. Clone your repo:
+   !git clone https://github.com/<you>/<repo>.git /kaggle/working/tj
+   %cd /kaggle/working/tj
+
+4. Sanity check:
+   !nvidia-smi
+   import torch; print(torch.__version__, torch.cuda.is_available())
+   !ls /kaggle/input/*/
+
+5. After editing on your laptop and pushing:
+   !cd /kaggle/working/tj && git pull

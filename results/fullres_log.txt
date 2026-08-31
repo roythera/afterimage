@@ -1,0 +1,100 @@
+600 full-resolution images, 50.0% AI-generated, median min-side 1024px, device=mps
+
+=== baseline, inference mode=patch ===
+  clean                acc 0.5767  auc 0.7717
+  jpeg_q=90            acc 0.5800  auc 0.7715
+  jpeg_q=70            acc 0.5650  auc 0.7852
+  jpeg_q=50            acc 0.5300  auc 0.7858
+  jpeg_q=30            acc 0.5233  auc 0.7308
+  blur_sigma=0.5       acc 0.5533  auc 0.7393
+  blur_sigma=1.0       acc 0.5700  auc 0.6196
+  blur_sigma=2.0       acc 0.4550  auc 0.4731
+  resize_0.5x          acc 0.5767  auc 0.6254
+  resize_0.25x         acc 0.4783  auc 0.4863
+  noise_sigma=0.02     acc 0.5033  auc 0.6289
+  noise_sigma=0.05     acc 0.4850  auc 0.4622
+  noise_sigma=0.10     acc 0.4517  auc 0.4420
+  jitter_+/-20%        acc 0.6000  auc 0.7384
+  crop_80%             acc 0.5550  auc 0.7002
+  -> clean AUC 0.7717 | mean transformed AUC 0.6420 | worst 0.4420
+
+=== baseline, inference mode=resize ===
+  clean                acc 0.6050  auc 0.6506
+  jpeg_q=90            acc 0.6050  auc 0.6514
+  jpeg_q=70            acc 0.6067  auc 0.6528
+  jpeg_q=50            acc 0.6017  auc 0.6489
+  jpeg_q=30            acc 0.6133  auc 0.6529
+  blur_sigma=0.5       acc 0.6017  auc 0.6509
+  blur_sigma=1.0       acc 0.6050  auc 0.6522
+  blur_sigma=2.0       acc 0.6100  auc 0.6571
+  resize_0.5x          acc 0.6017  auc 0.6519
+  resize_0.25x         acc 0.6100  auc 0.6555
+  noise_sigma=0.02     acc 0.6033  auc 0.6495
+  noise_sigma=0.05     acc 0.6033  auc 0.6496
+  noise_sigma=0.10     acc 0.6050  auc 0.6554
+  jitter_+/-20%        acc 0.5950  auc 0.6428
+  crop_80%             acc 0.5567  auc 0.5947
+  -> clean AUC 0.6506 | mean transformed AUC 0.6475 | worst 0.5947
+
+=== robust, inference mode=patch ===
+  clean                acc 0.5533  auc 0.7440
+  jpeg_q=90            acc 0.5550  auc 0.7451
+  jpeg_q=70            acc 0.5400  auc 0.7562
+  jpeg_q=50            acc 0.5150  auc 0.7485
+  jpeg_q=30            acc 0.5300  auc 0.6819
+  blur_sigma=0.5       acc 0.5483  auc 0.7248
+  blur_sigma=1.0       acc 0.5517  auc 0.6798
+  blur_sigma=2.0       acc 0.5717  auc 0.5973
+  resize_0.5x          acc 0.5500  auc 0.6785
+  resize_0.25x         acc 0.5733  auc 0.5910
+  noise_sigma=0.02     acc 0.5117  auc 0.6692
+  noise_sigma=0.05     acc 0.4933  auc 0.5969
+  noise_sigma=0.10     acc 0.4933  auc 0.5563
+  jitter_+/-20%        acc 0.5767  auc 0.7040
+  crop_80%             acc 0.5583  auc 0.7256
+  -> clean AUC 0.7440 | mean transformed AUC 0.6754 | worst 0.5563
+
+=== robust, inference mode=resize ===
+  clean                acc 0.5933  auc 0.6310
+  jpeg_q=90            acc 0.5967  auc 0.6306
+  jpeg_q=70            acc 0.5967  auc 0.6331
+  jpeg_q=50            acc 0.5933  auc 0.6292
+  jpeg_q=30            acc 0.5933  auc 0.6355
+  blur_sigma=0.5       acc 0.5933  auc 0.6312
+  blur_sigma=1.0       acc 0.5933  auc 0.6315
+  blur_sigma=2.0       acc 0.5917  auc 0.6334
+  resize_0.5x          acc 0.5917  auc 0.6313
+  resize_0.25x         acc 0.5933  auc 0.6330
+  noise_sigma=0.02     acc 0.5917  auc 0.6297
+  noise_sigma=0.05     acc 0.5933  auc 0.6283
+  noise_sigma=0.10     acc 0.5883  auc 0.6328
+  jitter_+/-20%        acc 0.5900  auc 0.6235
+  crop_80%             acc 0.5800  auc 0.6182
+  -> clean AUC 0.6310 | mean transformed AUC 0.6301 | worst 0.6182
+
+Full-resolution out-of-distribution slice: 600 SID_Set validation images (median min-side 1024px). AUC, since class balance and calibration both shift off CIFAKE.
+
+| Condition | Parameter | baseline|patch | baseline|resize | robust|patch | robust|resize |
+|---|---|---|---|---|---|
+| clean | - | 77.17 | 65.06 | 74.40 | 63.10 |
+| jpeg | q=90 | 77.15 | 65.14 | 74.51 | 63.06 |
+| jpeg | q=70 | 78.52 | 65.28 | 75.62 | 63.31 |
+| jpeg | q=50 | 78.58 | 64.89 | 74.85 | 62.92 |
+| jpeg | q=30 | 73.08 | 65.29 | 68.19 | 63.55 |
+| blur | sigma=0.5 | 73.93 | 65.09 | 72.48 | 63.12 |
+| blur | sigma=1.0 | 61.96 | 65.22 | 67.98 | 63.15 |
+| blur | sigma=2.0 | 47.31 | 65.71 | 59.73 | 63.34 |
+| resize | 0.5x | 62.54 | 65.19 | 67.85 | 63.13 |
+| resize | 0.25x | 48.63 | 65.55 | 59.10 | 63.30 |
+| noise | sigma=0.02 | 62.89 | 64.95 | 66.92 | 62.97 |
+| noise | sigma=0.05 | 46.22 | 64.96 | 59.69 | 62.83 |
+| noise | sigma=0.10 | 44.20 | 65.54 | 55.63 | 63.28 |
+| jitter | +/-20% | 73.84 | 64.28 | 70.40 | 62.35 |
+| crop | 80% | 70.02 | 59.47 | 72.56 | 61.82 |
+
+- **baseline|patch**: clean AUC 77.17, mean transformed 64.20, worst 44.20.
+- **baseline|resize**: clean AUC 65.06, mean transformed 64.75, worst 59.47.
+- **robust|patch**: clean AUC 74.40, mean transformed 67.54, worst 55.63.
+- **robust|resize**: clean AUC 63.10, mean transformed 63.01, worst 61.82.
+
+wrote results/fullres.json and results/fullres_table.md
