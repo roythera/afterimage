@@ -1,6 +1,12 @@
-# Robust Detection of AI-Generated Images Under Real-World Transformations
+# Afterimage
+
+**Robust detection of AI-generated images under real-world transformations.**
 
 TikTok TechJam 2026 — Track 5
+
+*An afterimage is what persists once the stimulus is gone. This project detects
+the generator fingerprint that survives after a platform has compressed, blurred,
+resized and re-encoded the image it was left in.*
 
 ## Project overview
 
@@ -400,4 +406,4 @@ Every number in this README and in `docs/` is traceable to a file in `results/`:
 
 ## Team
 
-Solo — Roy Sasson, NUS.
+Solo — Roy Sasson.
